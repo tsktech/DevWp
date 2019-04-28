@@ -1,12 +1,95 @@
 diffrence from the TuT
 ===
-* REPLACE 
-** wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/font-awesome.min.css');
-** wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome-5/css/all.min.css');
-of course downloaded the awesome 5 free fonts and copied the css & websfonts to fonts>font-awesome
 
+## Critical Issue 
+### with Safari
+*the col-md-8 and col-md-4 will not render properly unless wrapped in row*
 
+```
+get_header();
+?>
+<div class="row"> <!-- added to fix rendering in safari -->
+	<div id="primary" class="content-area col-md-8">
+```
 
+```
+<div class="col-md-4">
+		<?php get_sidebar(); ?>
+	</div><!-- .col-md-4 -->
+</div><!-- .row -->
+<?php get_footer();
+```
+of course delete the row in the ***header.php***
+
+```
+<!-- <div id="content" class="site-content row"> -->
+	 <div id="content" class="site-content">
+```
+### with navwalker
+
+```
+replace the following
+'fallback_cb'		=> 'Navwalker::fallback',
+'walker'			=> new Navwalker()
+
+with 
+
+'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
+'walker'			=> new WP_Bootstrap_Navwalker()
+```
+### the Navbar style sheet modification is also not required
+```
+/*.open > .dropdown-menu {
+	-webkit-transform: scale(1,1);
+	    	transform: scale(1,1);
+	    	opacity: 1;
+}
+
+.dropdown-menu {
+	margin-top: 0;
+	opacity: 0.5;
+	-webkit-transform-origin: top;
+	    	transform-origin: top;
+	-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+	-webkit-transform: scale(1,0);
+			transition: all 0.3s linear;
+}*/
+
+/*.dropdown-toggle::after {
+	vertical-align: .150em;
+}*/
+```
+
+## Fontawesome
+*download the awesome 5 free fonts* [Font Awesome] (//https://fontawesome.com/) *copy the unzipped files* **css** & **websfonts** to **fonts>font-awesome**
+`wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/font-awesome.min.css');`
+`replace with`
+`wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/all.min.css');`
+
+## Select
+*the ***height property*** had to be added for the style to work*
+
+```
+select {
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: 100%;
+	height: 40px;
+}
+```
+## Monster Widget
+*in the sidebar the "Nav Menu> Depth is all over the place. did not find a way to fix the overflow* tp prevent the overflow add
+
+```
+.widget {
+	margin: 0 0 1.5em;
+	overflow: auto;
+	/* Make sure select elements fit in widgets. */
+}
+```
+
+---
 
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
