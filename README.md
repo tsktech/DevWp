@@ -1,3 +1,13 @@
+diffrence from the TuT
+===
+* REPLACE 
+** wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/font-awesome.min.css');
+** wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome-5/css/all.min.css');
+of course downloaded the awesome 5 free fonts and copied the css & websfonts to fonts>font-awesome
+
+
+
+
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
 _s
