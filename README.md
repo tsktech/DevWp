@@ -61,6 +61,15 @@ with
 }*/
 ```
 
+### col-md-push or col-md-pull no longer works [tut pixenWeb] (//https://youtu.be/7bHMh2e2qZM)
+*for the post with sidebar on the left, with* ***bootstrap 4.3*** *we have to use*
+`order-last or order-first`
+
+### webfonts are not loaded, if the webfonts are under fonts folder
+*make copy of* ***webfont*** *in the root directory*
+
+***
+
 ## Fontawesome
 *download the awesome 5 free fonts* [Font Awesome] (//https://fontawesome.com/) *copy the unzipped files* **css** & **websfonts** to **fonts>font-awesome**
 `wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/font-awesome.min.css');`
@@ -68,7 +77,7 @@ with
 `wp_enqueue_style( 'depwp-fontawesome', get_template_directory_uri () .  '/fonts/font-awesome/css/all.min.css');`
 
 ## Select
-*the ***height property*** had to be added for the style to work*
+*the* ***height property*** *had to be added for the style to work*
 
 ```
 select {
@@ -79,7 +88,7 @@ select {
 }
 ```
 ## Monster Widget
-*in the sidebar the "Nav Menu> Depth is all over the place. did not find a way to fix the overflow* tp prevent the overflow add
+*in the sidebar the "Nav Menu> Depth is all over the place. did not find a way to fix the overflow* ***to prevent the overflow add***
 
 ```
 .widget {
