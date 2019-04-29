@@ -22,9 +22,16 @@
 				?>
 			</a>
 			<span class="sep"> | </span>
+
+			<a href="<?php echo esc_url( __( 'https://tsktech.in/', 'depwp' ) ); ?>">
+				<?php printf(esc_html__( 'Theme: %1$s by %2$s.', 'depwp' ), 'DepWP', 'TSKAMATH TECHNOLOGIES PVT LTD'); ?>
+
+
+			</a>
+
 				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'depwp' ), 'DepWP', '<a href="http://www.tskamath.com">Tskamath Technologies</a>' );
+				// /* translators: 1: Theme name, 2: Theme author. */
+				// printf( esc_html__( 'Theme: %1$s by %2$s.', 'depwp' ), 'DepWP', '<a href="http://www.tskamath.com">Tskamath Technologies</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

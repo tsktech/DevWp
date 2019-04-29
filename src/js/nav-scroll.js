@@ -15,6 +15,7 @@ jQuery(document).ready(function($) {
     $('html, body').animate({scrollTop: 0}, 300);
   });
 
+
   // Open External links in a new tab
   $('a').
       filter('[href^="http"], [href^="//"]').
